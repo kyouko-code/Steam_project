@@ -25,7 +25,7 @@
                             <label class="flex items-center p-4 bg-gray-700/50 rounded-lg cursor-pointer hover:bg-gray-700 transition">
                                 <input type="radio" name="payment_method" value="credit_card" checked class="h-4 w-4 text-blue-600 border-gray-600">
                                 <span class="ml-3 text-white text-sm">Credit Card</span>
-                                <span class="ml-auto text-gray-500 text-xs">Visa / Mastercard</span>
+                                <span class="ml-auto text-gray-400 text-xs">Visa / Mastercard</span>
                             </label>
                             <label class="flex items-center p-4 bg-gray-700/50 rounded-lg cursor-pointer hover:bg-gray-700 transition">
                                 <input type="radio" name="payment_method" value="paypal" class="h-4 w-4 text-blue-600 border-gray-600">
@@ -48,11 +48,11 @@
                 <h2 class="text-lg font-bold text-white mb-4">Order Summary</h2>
                 <div class="space-y-3 text-sm">
                     <div class="flex justify-between">
-                        <span class="text-gray-400">Items ({{ $cartItems->count() }})</span>
+                        <span class="text-gray-300">Items ({{ $cartItems->count() }})</span>
                         <span class="text-white">${{ number_format($subtotal, 2) }}</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-gray-400">Tax</span>
+                        <span class="text-gray-300">Tax</span>
                         <span class="text-white">$0.00</span>
                     </div>
                     <div class="border-t border-gray-700 pt-3 flex justify-between items-center">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <a href="{{ route('cart.index') }}" class="text-center block text-sm text-gray-400 hover:text-white transition">Back to Cart</a>
+                    <a href="{{ route('cart.index') }}" class="text-center block text-sm text-gray-300 hover:text-white transition">Back to Cart</a>
                 </div>
             </div>
         </div>

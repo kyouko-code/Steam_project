@@ -30,13 +30,13 @@
                             @include('genres._icon')
                         </div>
                         <h2 class="text-white font-semibold text-lg group-hover:text-blue-400 transition">{{ $genre->name }}</h2>
-                        <p class="text-gray-500 text-sm mt-1">{{ $genre->games_count }} game{{ $genre->games_count == 1 ? '' : 's' }}</p>
+                        <p class="text-gray-400 text-sm mt-1">{{ $genre->games_count }} game{{ $genre->games_count == 1 ? '' : 's' }}</p>
                     </a>
                 @endforeach
             </div>
         @else
             <div class="text-center py-16 bg-gray-800 rounded-lg">
-                <p class="text-gray-400 text-lg">No genres available yet.</p>
+                <p class="text-gray-300 text-lg">No genres available yet.</p>
             </div>
         @endif
     </div>

@@ -22,7 +22,7 @@
             </div>
         @else
             <div class="text-center py-16 bg-gray-800 rounded-lg">
-                <p class="text-gray-400 text-lg mb-4">Your library is empty</p>
+                <p class="text-gray-300 text-lg mb-4">Your library is empty</p>
                 <a href="{{ route('games.index') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 rounded-md text-sm font-semibold text-white hover:bg-blue-500 transition">
                     Browse Games
                 </a>

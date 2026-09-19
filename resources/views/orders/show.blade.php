@@ -10,7 +10,7 @@
                 <div class="bg-gray-800 rounded-lg p-6">
                     <h2 class="text-lg font-bold text-white mb-4">Items Purchased</h2>
                     @if($order->items->isEmpty())
-                        <p class="text-gray-500">This order has no items.</p>
+                        <p class="text-gray-400">This order has no items.</p>
                     @else
                         <div class="space-y-4">
                             @foreach($order->items as $item)
@@ -23,7 +23,7 @@
                                             <a href="{{ route('games.show', $item->game->slug) }}" class="text-white font-semibold hover:text-blue-400 transition">
                                                 {{ $item->game->title }}
                                             </a>
-                                            <p class="text-gray-500 text-sm">by {{ $item->game->developer }}</p>
+                                            <p class="text-gray-400 text-sm">by {{ $item->game->developer }}</p>
                                         </div>
                                     </div>
                                     <div class="text-right">
@@ -41,19 +41,19 @@
                 <h2 class="text-lg font-bold text-white mb-4">Order Details</h2>
                 <dl class="space-y-3 text-sm">
                     <div class="flex justify-between">
-                        <dt class="text-gray-400">Order Number</dt>
+                        <dt class="text-gray-300">Order Number</dt>
                         <dd class="text-white">{{ $order->order_number }}</dd>
                     </div>
                     <div class="flex justify-between">
-                        <dt class="text-gray-400">Date Placed</dt>
+                        <dt class="text-gray-300">Date Placed</dt>
                         <dd class="text-white">{{ $order->created_at->format('M d, Y g:i A') }}</dd>
                     </div>
                     <div class="flex justify-between">
-                        <dt class="text-gray-400">Status</dt>
+                        <dt class="text-gray-300">Status</dt>
                         <dd class="text-green-400 font-semibold">{{ ucfirst($order->status) }}</dd>
                     </div>
                     <div class="flex justify-between">
-                        <dt class="text-gray-400">Payment Method</dt>
+                        <dt class="text-gray-300">Payment Method</dt>
                         <dd class="text-white">{{ ucfirst(str_replace('_', ' ', $order->payment_method)) }}</dd>
                     </div>
                     <div class="border-t border-gray-700 pt-3 flex justify-between">

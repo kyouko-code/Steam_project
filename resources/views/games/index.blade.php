@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-2xl font-bold text-white mb-6">Store</h1>
+        <h1 class="text-2xl font-bold text-white mb-6">{{ $pageTitle ?? 'Store' }}</h1>
 
         <div class="mb-6 rounded-lg p-4 bg-gray-800">
             <form method="GET" action="{{ route('games.index') }}" class="space-y-4">
@@ -33,7 +33,7 @@
                         Search
                     </button>
                     @if(request()->hasAny(['search', 'genre', 'sort']))
-                        <a href="{{ route('games.index') }}" class="text-sm text-gray-400 hover:text-white ml-3 transition">Clear Filters</a>
+                        <a href="{{ route('games.index') }}" class="text-sm text-gray-300 hover:text-white ml-3 transition">Clear Filters</a>
                     @endif
                 </div>
             </form>
@@ -51,7 +51,7 @@
             </div>
         @else
             <div class="text-center py-16">
-                <p class="text-gray-400 text-lg mb-4">No games found</p>
+                <p class="text-gray-300 text-lg mb-4">No games found</p>
                 <a href="{{ route('games.index') }}" class="text-blue-400 hover:text-blue-300">Clear search filters</a>
             </div>
         @endif

@@ -2,7 +2,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex justify-between items-center mb-6">
             <h1 class="text-2xl font-bold text-white">Edit: {{ $game->title }}</h1>
-            <a href="{{ route('admin.games.index') }}" class="text-gray-400 hover:text-white text-sm transition">&larr; Back to Games</a>
+            <a href="{{ route('admin.games.index') }}" class="text-gray-300 hover:text-white text-sm transition">&larr; Back to Games</a>
         </div>
 
         <form method="POST" action="{{ route('admin.games.update', $game) }}" class="bg-gray-800 rounded-lg p-8 space-y-6">
@@ -81,7 +81,7 @@
                 <button type="submit" class="inline-flex items-center px-6 py-3 bg-blue-600 rounded-md text-sm font-semibold text-white hover:bg-blue-500 transition">
                     Update Game
                 </button>
-                <a href="{{ route('admin.games.index') }}" class="text-sm text-gray-400 hover:text-white transition">Cancel</a>
+                <a href="{{ route('admin.games.index') }}" class="text-sm text-gray-300 hover:text-white transition">Cancel</a>
             </div>
         </form>
     </div>

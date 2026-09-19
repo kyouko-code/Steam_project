@@ -10,19 +10,19 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <div class="bg-gray-800 rounded-lg p-6">
                 <div class="text-3xl font-bold text-white">{{ $gameCount }}</div>
-                <div class="text-sm text-gray-400 mt-1">Total Games</div>
+                <div class="text-sm text-gray-300 mt-1">Total Games</div>
             </div>
             <div class="bg-gray-800 rounded-lg p-6">
                 <div class="text-3xl font-bold text-white">{{ $orderCount }}</div>
-                <div class="text-sm text-gray-400 mt-1">Total Orders</div>
+                <div class="text-sm text-gray-300 mt-1">Total Orders</div>
             </div>
             <div class="bg-gray-800 rounded-lg p-6">
                 <div class="text-3xl font-bold text-white">{{ $userCount }}</div>
-                <div class="text-sm text-gray-400 mt-1">Registered Users</div>
+                <div class="text-sm text-gray-300 mt-1">Registered Users</div>
             </div>
             <div class="bg-gray-800 rounded-lg p-6">
                 <div class="text-3xl font-bold text-green-400">${{ number_format($revenue, 2) }}</div>
-                <div class="text-sm text-gray-400 mt-1">Total Revenue</div>
+                <div class="text-sm text-gray-300 mt-1">Total Revenue</div>
             </div>
         </div>
 
@@ -35,14 +35,14 @@
                             <div class="flex justify-between items-center p-3 bg-gray-700/50 rounded">
                                 <div>
                                     <div class="text-white text-sm font-medium">{{ $order->order_number }}</div>
-                                    <div class="text-gray-500 text-xs">{{ $order->user->name }} &middot; {{ $order->created_at->format('M d, Y') }}</div>
+                                    <div class="text-gray-400 text-xs">{{ $order->user->name }} &middot; {{ $order->created_at->format('M d, Y') }}</div>
                                 </div>
                                 <span class="text-white font-semibold">${{ number_format($order->total_amount, 2) }}</span>
                             </div>
                         @endforeach
                     </div>
                 @else
-                    <p class="text-gray-500 text-sm">No orders yet.</p>
+                    <p class="text-gray-400 text-sm">No orders yet.</p>
                 @endif
             </div>
 
@@ -54,7 +54,7 @@
                             <div class="flex justify-between items-center p-3 bg-gray-700/50 rounded">
                                 <div>
                                     <div class="text-white text-sm font-medium">{{ $game->title }}</div>
-                                    <div class="text-gray-500 text-xs">{{ $game->developer }}</div>
+                                    <div class="text-gray-400 text-xs">{{ $game->developer }}</div>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="text-yellow-400 text-xs font-semibold">
@@ -66,7 +66,7 @@
                         @endforeach
                     </div>
                 @else
-                    <p class="text-gray-500 text-sm">No games yet.</p>
+                    <p class="text-gray-400 text-sm">No games yet.</p>
                 @endif
             </div>
         </div>

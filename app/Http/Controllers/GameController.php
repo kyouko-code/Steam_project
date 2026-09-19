@@ -54,8 +54,9 @@ class GameController extends Controller
         $games = $query->paginate(12)->withQueryString();
         $genres = Genre::all();
         $currentGenre = $request->genre ?? null;
+        $pageTitle = 'Store';
 
-        return view('games.index', compact('games', 'genres', 'currentGenre'));
+        return view('games.index', compact('games', 'genres', 'currentGenre', 'pageTitle'));
     }
 
     public function newReleases(Request $request): View
@@ -68,8 +69,9 @@ class GameController extends Controller
 
         $genres = Genre::all();
         $currentGenre = null;
+        $pageTitle = 'New Releases';
 
-        return view('games.index', compact('games', 'genres', 'currentGenre'));
+        return view('games.index', compact('games', 'genres', 'currentGenre', 'pageTitle'));
     }
 
     public function deals(Request $request): View
@@ -84,8 +86,9 @@ class GameController extends Controller
 
         $genres = Genre::all();
         $currentGenre = null;
+        $pageTitle = 'Deals';
 
-        return view('games.index', compact('games', 'genres', 'currentGenre'));
+        return view('games.index', compact('games', 'genres', 'currentGenre', 'pageTitle'));
     }
 
     public function genres(): View

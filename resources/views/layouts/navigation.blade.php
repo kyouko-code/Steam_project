@@ -43,7 +43,7 @@
             <div class="hidden sm:flex sm:items-center sm:space-x-3">
                 @auth
                     @php $cartCount = \App\Models\CartItem::where('user_id', auth()->id())->count(); @endphp
-                    <a href="{{ route('cart.index') }}" class="relative mr-2 text-gray-400 hover:text-white transition">
+                    <a href="{{ route('cart.index') }}" class="relative mr-2 text-gray-300 hover:text-white transition">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
                         </svg>
@@ -77,7 +77,7 @@
                         </x-slot>
                     </x-dropdown>
                 @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-400 hover:text-white transition px-3 py-2 rounded hover:bg-gray-800">Login</a>
+                    <a href="{{ route('login') }}" class="text-sm text-gray-300 hover:text-white transition px-3 py-2 rounded hover:bg-gray-800">Login</a>
                     <a href="{{ route('register') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 transition">
                         Register
                     </a>
@@ -85,7 +85,7 @@
             </div>
 
             <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none transition">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -115,7 +115,7 @@
             <div class="pt-4 pb-1 border-t border-gray-700">
                 <div class="px-4">
                     <div class="font-medium text-base text-white">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-400">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-sm text-gray-300">{{ Auth::user()->email }}</div>
                 </div>
                 <div class="mt-3 space-y-1">
                     <x-responsive-nav-link :href="route('profile.edit')">Profile</x-responsive-nav-link>

@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <nav class="text-sm text-gray-400 mb-6">
+        <nav class="text-sm text-gray-300 mb-6">
             <a href="{{ route('home') }}" class="hover:text-white">Home</a>
             <span class="mx-2">/</span>
             <a href="{{ route('games.index') }}" class="hover:text-white">Store</a>
@@ -15,7 +15,7 @@
                         <img src="{{ $game->cover_image }}" alt="{{ $game->title }}" class="w-full aspect-video object-cover">
                     @else
                         <div class="w-full aspect-video bg-gray-700 flex items-center justify-center">
-                            <svg class="h-24 w-24 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="h-24 w-24 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -40,7 +40,7 @@
                                 <form method="POST" action="{{ route('reviews.store', $game->id) }}">
                                     @csrf
                                     <div class="mb-4">
-                                        <label class="block text-sm text-gray-400 mb-2" for="rating">Rating</label>
+                                        <label class="block text-sm text-gray-300 mb-2" for="rating">Rating</label>
                                         <select name="rating" id="rating" class="block w-full max-w-xs rounded-md border-gray-600 bg-gray-900 text-white text-sm" required>
                                             <option value="5">5 - Excellent</option>
                                             <option value="4">4 - Great</option>
@@ -50,7 +50,7 @@
                                         </select>
                                     </div>
                                     <div class="mb-4">
-                                        <label class="block text-sm text-gray-400 mb-2" for="comment">Your Review</label>
+                                        <label class="block text-sm text-gray-300 mb-2" for="comment">Your Review</label>
                                         <textarea name="comment" id="comment" rows="4" class="block w-full rounded-md border-gray-600 bg-gray-900 text-white text-sm" placeholder="Share your experience with this game..." required></textarea>
                                     </div>
                                     <button type="submit" class="px-4 py-2 bg-blue-600 rounded-md text-sm font-semibold text-white hover:bg-blue-500 transition">Submit Review</button>
@@ -70,14 +70,14 @@
                                             </div>
                                             <div>
                                                 <span class="text-white font-medium text-sm">{{ $review->user->name }}</span>
-                                                <span class="text-gray-500 text-xs ml-2">{{ $review->created_at->diffForHumans() }}</span>
+                                                <span class="text-gray-400 text-xs ml-2">{{ $review->created_at->diffForHumans() }}</span>
                                             </div>
                                             <div class="flex text-yellow-400">
                                                 @for($i = 1; $i <= 5; $i++)
                                                     @if($i <= $review->rating)
                                                         <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.588-1.81h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                                                     @else
-                                                        <svg class="h-4 w-4 fill-current text-gray-600" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.588-1.81h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                                        <svg class="h-4 w-4 fill-current text-gray-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.588-1.81h3.462a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                                                     @endif
                                                 @endfor
                                             </div>
@@ -86,7 +86,7 @@
                                             <form method="POST" action="{{ route('reviews.destroy', $review) }}" onsubmit="return confirm('Delete this review?')">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="text-gray-500 hover:text-red-400 text-sm transition">Delete</button>
+                                                <button type="submit" class="text-gray-400 hover:text-red-400 text-sm transition">Delete</button>
                                             </form>
                                         @endif
                                     </div>
@@ -95,7 +95,7 @@
                             @endforeach
                         </div>
                     @else
-                        <p class="text-gray-500">No reviews yet. Be the first to review this game!</p>
+                        <p class="text-gray-400">No reviews yet. Be the first to review this game!</p>
                     @endif
                 </div>
             </div>
@@ -103,7 +103,7 @@
             <div>
                 <div class="bg-gray-800 rounded-lg p-6 sticky top-4">
                     <h1 class="text-2xl font-bold text-white mb-2">{{ $game->title }}</h1>
-                    <p class="text-gray-400 text-sm mb-4">{{ $game->developer }}</p>
+                    <p class="text-gray-300 text-sm mb-4">{{ $game->developer }}</p>
 
                     @if($game->genres->count())
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -119,7 +119,7 @@
                         @if($game->is_discounted)
                             <div class="flex items-center gap-3">
                                 <span class="bg-green-600 text-white text-sm font-bold px-2 py-1 rounded">-{{ $game->discount_percent }}%</span>
-                                <span class="text-gray-500 line-through">${{ number_format($game->price, 2) }}</span>
+                                <span class="text-gray-400 line-through">${{ number_format($game->price, 2) }}</span>
                                 <span class="text-2xl font-bold text-green-400">${{ number_format($game->discount_price, 2) }}</span>
                             </div>
                         @else
@@ -145,20 +145,20 @@
 
                     <div class="border-t border-gray-700 pt-4 space-y-3 text-sm">
                         <div class="flex justify-between">
-                            <span class="text-gray-400">Publisher</span>
+                            <span class="text-gray-300">Publisher</span>
                             <span class="text-white">{{ $game->publisher }}</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-gray-400">Developer</span>
+                            <span class="text-gray-300">Developer</span>
                             <span class="text-white">{{ $game->developer }}</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-gray-400">Release Date</span>
+                            <span class="text-gray-300">Release Date</span>
                             <span class="text-white">{{ $game->release_date->format('M j, Y') }}</span>
                         </div>
                         @if($game->average_rating)
                             <div class="flex justify-between">
-                                <span class="text-gray-400">Rating</span>
+                                <span class="text-gray-300">Rating</span>
                                 <span class="text-yellow-400">{{ number_format($game->average_rating, 1) }} / 5</span>
                             </div>
                         @endif
